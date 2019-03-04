@@ -2,13 +2,43 @@ import React, { Component } from 'react'
 import { Pie} from 'react-chartjs-2';
 
 
-class cart extends Component {
+class chart extends Component {
     constructor(props){
         super(props);
         this.state={
             chartData : props.chartData
         };
     }
+
+    componentWillMount(){
+        this.getChartData();
+      }
+    
+      getChartData(){
+        this.setState({
+          chartData:{
+            labels :['Sangat Bersih','Bersih','Cukup Bersih','Kurang'],
+            datasets:[
+                {
+                    label : 'Population',
+                    data:[
+                        1,
+                        2,
+                        3,
+                        4,                   
+                    ],
+                    backgroundColor: [
+                        '#1976d2',
+                        '#2196f3',
+                        '#64b5f6',
+                        '#bbdefb',                  
+                    ]
+                }
+            ]
+    
+          }
+        })
+      }
 
     static defaultProps = {
         displayTitle : true,
@@ -39,4 +69,4 @@ class cart extends Component {
     }
 }
 
-export default cart;
+export default chart;
