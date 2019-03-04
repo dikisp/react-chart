@@ -17,26 +17,21 @@ class App extends Component {
   getChartData(){
     this.setState({
       chartData:{
-        labels :['Sangat Bersih','Bersih','Tidak Bersih','Kotor','Menjijikan','Tenggelamkan'],
+        labels :['Sangat Bersih','Bersih','Cukup Bersih','Kurang'],
         datasets:[
             {
-                labels : 'Population',
+                label : 'Population',
                 data:[
-                    781278,
-                    128912,
-                    438269,
-                    426787,
-                    234689,
-                    352758
+                    1,
+                    2,
+                    3,
+                    4,                   
                 ],
                 backgroundColor: [
-                    'rgba(255,99,132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(255,206,86,0.6)',
-                    'rgba(153,102,255, 0.6)',
-                    'rgba(255,159,64,0.6)',
-                    'rgba(255,99,132,0.6)',
+                    '#1976d2',
+                    '#2196f3',
+                    '#64b5f6',
+                    '#bbdefb',                  
                 ]
             }
         ]
@@ -47,7 +42,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Chart chartData={this.state.chartData} location="Bersih" legendPosition="bottom"/>
+          <Chart chartData={this.state.chartData} location=" Lantai" legendPosition="right"/>
+          <Chart chartData={this.state.chartData} location=" Toilet" legendPosition="right"/>
+          <Chart chartData={this.state.chartData} location=" Ruangan" legendPosition="right"/>
       </div>
     );
   }

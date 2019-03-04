@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import {Bar, Line, Pie, Doughnut} from 'react-chartjs-2';
+import { Pie} from 'react-chartjs-2';
 
 
 class cart extends Component {
     constructor(props){
         super(props);
         this.state={
-            chartData : 
-        }
+            chartData : props.chartData
+        };
     }
 
     static defaultProps = {
@@ -25,7 +25,7 @@ class cart extends Component {
                     options={{
                         title:{
                             display :true,
-                            text :'Toilet'+this.props.location,
+                            text :this.props.location,
                             fontSize:25
                         },
                         legend:{
