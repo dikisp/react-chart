@@ -7,7 +7,9 @@ class App extends Component {
     return (
       <div className="App">
           <Chart location=" Lantai" legendPosition="right"/>
+          <hr style={{height:'2px',background:'#444'}}/>
           <Chart location=" Toilet" legendPosition="right"/>
+          <hr style={{height:'2px',background:'#444'}}/>
           <Chart location=" Ruangan" legendPosition="right"/>
       </div>
     );
